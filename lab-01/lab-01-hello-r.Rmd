@@ -225,6 +225,8 @@ dino_data %>%
   summarize(r = cor(x, y))
 ```
 
+**Answer:** The correlation coefficient between `x` and `y` for the dino dataset is approximately -0.0645, which indicates almost no linear relationship.
+
 🧶 ✅ ⬆️ *Knit, commit, and push your changes to GitHub with the commit message "Added answer for Ex 2". Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 3.  Plot `y` vs. `x` for the `star` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
