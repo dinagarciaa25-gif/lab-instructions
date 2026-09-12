@@ -1,6 +1,6 @@
 ---
 title: "Lab 02 - Global plastic waste"
-author: "[Your Name]"
+author: "Dina Alarcon"
 output: 
   tufte::tufte_handout:
     latex_engine: xelatex
@@ -96,20 +96,21 @@ Before diving into the exercises, let's make sure you're familiar with the RStud
 **Question 1:** Without looking, can you name the four panes in RStudio and briefly describe their purpose?
 
 **Your answer:**
+The four panes are the Source pane, where I write and edit code; the Console pane, where R runs commands; the Environment pane, where I can see my datasets and objects; and the Files, Plots, Packages, and Help pane, where I can view files, graphs, packages, and help information.
 
 
 **Question 2:** Verify that the dataset has loaded into the Environment pane. How many observations are in the dataset?
 
 **Hint:** Look in the Environment pane, or run `nrow(plastic_waste)` in the Console, or click on the dataset name to view it.
 
-**Your answer:** The dataset has _____ observations.
+**Your answer:** The dataset has _240_ observations.
 
 **Question 3:** Have a quick look at the data using `View(plastic_waste)` in the Console. You'll notice that some cells contain `NA`. What does `NA` mean in R?
 
 **Hint:** Run `?NA` in the Console to see the documentation.
 
 **Your answer:**
-
+NA means that the information is missing or not available for that observation.
 
 
 **✓ Checkpoint:** Make sure the data loaded correctly and you can see it in your Environment pane before continuing.
