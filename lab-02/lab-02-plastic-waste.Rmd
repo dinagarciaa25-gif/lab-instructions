@@ -353,19 +353,23 @@ Both plastic waste per capita and coastal population appear to have a slightly s
 
 Recreate the following plot, and interpret what you see in context of the data.
 ```{r echo=FALSE, message=FALSE, eval=TRUE, warning=FALSE}
-plastic_waste %>% 
+plastic_waste %>%
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
   filter(plastic_waste_per_cap < 3) %>%
-  ggplot(aes(x = coastal_pop_prop, y = plastic_waste_per_cap, color = continent)) + 
-    geom_point() +
-    geom_smooth(color = "black") +
-    scale_color_viridis_d() +
-    labs(x = "Coastal population proportion (Coastal / total population)", 
-         y = "Plastic waste per capita ", 
-         color = "Continent",
-         title = "Plastic waste vs. coastal population proportion",
-         subtitle = "by continent") +
-    theme_minimal()
+  ggplot(aes(x = coastal_pop_prop,
+             y = plastic_waste_per_cap,
+             color = continent)) +
+  geom_point() +
+  geom_smooth(color = "black") +
+  scale_color_viridis_d() +
+  labs(
+    x = "Coastal population proportion (coastal / total population)",
+    y = "Plastic waste per capita",
+    color = "Continent",
+    title = "Plastic waste vs. coastal population proportion",
+    subtitle = "by continent"
+  ) +
+  theme_minimal()
 ```
 
 **This plot requires several steps:**
@@ -378,24 +382,30 @@ plastic_waste %>%
 6. Add appropriate labels
 
 **Build it step by step:**
-```{r recreate-plot, eval=FALSE}
+```{r recreate-plot, eval=TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-plastic_waste %>% 
-  mutate(coastal_pop_prop = ___ / ___) %>%
-  filter(___ < ___) %>%
-  ggplot(aes(x = ___, y = ___, color = ___)) + 
-    geom_point() +
-    geom_smooth(color = "black") +
-    scale_color_viridis_d() +
-    labs(x = "___", 
-         y = "___", 
-         color = "___",
-         title = "___",
-         subtitle = "___") +
-    theme_minimal()
+plastic_waste %>%
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3) %>%
+  ggplot(aes(x = coastal_pop_prop,
+             y = plastic_waste_per_cap,
+             color = continent)) +
+  geom_point() +
+  geom_smooth(color = "black") +
+  scale_color_viridis_d() +
+  labs(
+    x = "Coastal population proportion (coastal / total population)",
+    y = "Plastic waste per capita",
+    color = "Continent",
+    title = "Plastic waste vs. coastal population proportion",
+    subtitle = "by continent"
+  ) +
+  theme_minimal()
 ```
 
 **Interpretation:** What does this plot reveal about the relationship between coastal population proportion and plastic waste per capita? Does the relationship differ across continents?
+
+Plastic waste per capita generally rises as the coastal population proportion increases, but the relationship is not completely the same. The line rises until the coastal population proportion is around 1 and then begins to decrease slightly. The continents overlap a lot, so there are no completely clear differences. Many African countries have lower plastic waste per capita, while some North American and European countries have higher values.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 8", and push your changes.**
