@@ -1,6 +1,6 @@
 ---
 title: "Lab 03 - Nobel laureates"
-author: "[Your Name]"
+author: "Dina Alarcon"
 output: 
   tufte::tufte_html:
     css: ../lab.css
@@ -165,11 +165,11 @@ Before diving into the exercises, let's get familiar with the data.
 
 **Hint:** Use   backtick r nrow(nobel) backtick  for rows and  backtick r ncol(nobel) backtick for columns in your narrative text.
 
-**Your answer:** 
+**Your answer:** The dataset has `r nrow(nobel)` observations and `r ncol(nobel)` variables.
 
 **Question 2:** Run `View(nobel)` in your Console. What does each row represent?
 
-**Your answer:**
+**Your answer:** Each row represents one Nobel laureate and information about the Nobel Prize they received.
 
 
 
@@ -195,7 +195,7 @@ How many observations and how many variables are in the dataset? Use inline code
 
 **Write your answer using inline code:**
 
-The nobel dataset has _____ observations and _____ variables. Each row represents _____.
+The nobel dataset has `r nrow(nobel)` observations and `r ncol(nobel)` variables. Each row represents one Nobel laureate and information about the prize they received.
 
 ---
 
