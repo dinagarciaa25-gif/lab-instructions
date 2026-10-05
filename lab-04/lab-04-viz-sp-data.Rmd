@@ -182,9 +182,9 @@ Take a look at the websites that the data come from (linked above). Are there an
 Now take a look at the data (use `View(dennys)` and `View(laquinta)` in the Console). What would be some ways of determining whether or not either establishment has any locations outside the US using just the data (and not the websites)? Don't worry about whether you know how to implement this, just brainstorm some ideas.
 
 **Your ideas:**
-- 
-- 
-- 
+- I could check the state column for abbreviations that are not US states, like AG in the La Quinta data.
+- I could look at the city and address columns for clues that a location is outside the US.
+- I could plot the longitude and latitude on a map to see which locations are outside the US.
 
 ---
 
@@ -203,9 +203,9 @@ dennys %>%
   filter(!(state %in% states$abbreviation))
 ```
 
-**How many Denny's locations are outside the US?** _____
+**How many Denny's locations are outside the US?** 0 locations.
 
-**If there are any, which state/province codes appear?** _____
+**If there are any, which state/province codes appear?** None.
 
 ---
 
@@ -219,10 +219,10 @@ The `<-` assignment operator saves the result. Without it, R will display the re
 ```
 
 **Complete the code:**
-```{r add-dennys-country, eval = FALSE}
+```{r add-dennys-country, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 dennys <- dennys %>%
-  mutate(___ = "___")
+  mutate(country = "United States")
 ```
 
 **What this does:**
@@ -252,16 +252,17 @@ laquinta %>%
 
 | State Code | Country |
 |:-----------|:--------|
-| ON         |         |
-| BC         |         |
-| ANT        |         |
-| AG         |         |
-| QR         |         |
-| CH         |         |
-| NL         |         |
-| VE         |         |
-| PU         |         |
-| SL         |         |
+| ON         | Canada  |
+| BC         | Canada  |
+| ANT        | Colombia|
+| AG         | Mexico  |
+| QR         | Mexico  |
+| CH         | Mexico  |
+| NL         | Mexico  |
+| VE         | Mexico  |
+| PU         | Mexico  |
+| SL         | Mexico  |
+| FM         | Honduras|
 
 **Hint:** Google the state codes along with "La Quinta" to find out which countries they're in.
 
@@ -272,14 +273,15 @@ laquinta %>%
 Add a country variable to the La Quinta dataset. Use the `case_when()` function to populate this variable based on the state codes. You'll need to refer to your notes from Exercise 7 about which country the non-US locations are in.
 
 **Complete the code:**
-```{r add-laquinta-country, eval = FALSE}
+```{r add-laquinta-country, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 laquinta <- laquinta %>%
   mutate(country = case_when(
-    state %in% state.abb     ~ "United States",
-    state %in% c("ON", "BC") ~ "___",
-    state == "ANT"           ~ "___",
-    state %in% c("AG", "QR", "CH", "NL", "VE", "PU", "SL") ~ "___"
+    state %in% state.abb ~ "United States",
+    state %in% c("ON", "BC") ~ "Canada",
+    state == "ANT" ~ "Colombia",
+    state == "FM" ~ "Honduras",
+    state %in% c("AG", "QR", "CH", "NL", "VE", "PU", "SL") ~ "Mexico"
   ))
 ```
 
@@ -312,34 +314,35 @@ laquinta %>%
 Which states have the most and fewest Denny's locations? What about La Quinta? Is this surprising? Why or why not?
 
 **First, count locations by state:**
-```{r count-by-state, eval = FALSE}
+```{r count-by-state, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 
 # Denny's by state
 dennys %>%
-  count(___) %>%
-  arrange(desc(___))
+  count(state) %>%
+  arrange(desc(n))
 
 # La Quinta by state
 laquinta %>%
-  count(___) %>%
-  arrange(desc(___))
+  filter(country == "United States") %>%
+  count(state) %>%
+  arrange(desc(n))
 ```
 
 **Your findings:**
 
 **Denny's:**
 
-- State with most locations: _____
-- State with fewest locations: _____
+- State with most locations: California, 403 locations.
+- State with fewest locations: Delaware, 1 location.
 
 **La Quinta:**
 
-- State with most locations: _____
-- State with fewest locations: _____
+- State with most locations: Texas, 237 locations.
+- State with fewest locations: Delaware and Hawaii, 0 locations.
 
 **Is this surprising? Why or why not?**
-
+I was surprised that Texas has 237 La Quinta locations, while California has only 56. I was also surprised that Delaware and Hawaii have none in this dataset. California having the most Denny’s locations makes sense to me because it has a large population.
 
 
 ---
@@ -365,34 +368,41 @@ dennys %>%
 Which states have the most Denny's locations per thousand square miles? What about La Quinta?
 
 **Build on the code above to calculate density:**
-```{r dennys-density, eval = FALSE}
+```{r dennys-density, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 dennys %>%
   count(state) %>%
   inner_join(states, by = c("state" = "abbreviation")) %>%
-  mutate(density = ___ / ___ * 1000) %>%
-  arrange(desc(___))
+  mutate(density = n / area * 1000) %>%
+  arrange(desc(density))
 ```
 
 **Hint:** Density = number of locations / area * 1000
 
 **Now do the same for La Quinta:**
-```{r laquinta-density, eval = FALSE}
+```{r laquinta-density, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 # Your code here
+
+  laquinta %>%
+  filter(country == "United States") %>%
+  count(state) %>%
+  inner_join(states, by = c("state" = "abbreviation")) %>%
+  mutate(density = n / area * 1000) %>%
+  arrange(desc(density))
 ```
 
 **Your findings:**
 
 **Denny's:**
 
-- State with highest density: _____
-- Density value: _____
+- State with highest density: Rhode Island
+- Density value: 3.24 locations per 1,000 square miles
 
 **La Quinta:**
 
-- State with highest density: _____
-- Density value: _____
+- State with highest density: Rhode Island
+- Density value: 1.29 locations per 1,000 square miles
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 9-10", and push your changes.**
 
