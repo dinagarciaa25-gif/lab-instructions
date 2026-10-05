@@ -121,9 +121,10 @@ Each observation in this dataset represents a state, including DC. Along with th
 
 What are the dimensions of the Denny's dataset? What does each row in the dataset represent? What are the variables?
 
+
 **Use inline code to report dimensions.** In your narrative text, you can use inline R code with the functions `nrow()` and `ncol()` to report the number of rows and columns.
 
-**Your answer:** The Denny's dataset has _____ rows and _____ columns. Each row represents _____. The variables are _____.
+**Your answer:** The Denny's dataset has `r nrow(dennys)` rows and `r ncol(dennys)` columns. Each row represents one Denny's restaurant location. The variables are address, city, state, zip, longitude, and latitude.
 
 **Hint:** Run `glimpse(dennys)` or `?dennys` to see variable descriptions.
 
@@ -133,7 +134,7 @@ What are the dimensions of the Denny's dataset? What does each row in the datase
 
 What are the dimensions of the La Quinta dataset? What does each row in the dataset represent? What are the variables?
 
-**Your answer:** The La Quinta dataset has _____ rows and _____ columns. Each row represents _____. The variables are _____.
+**Your answer:** The La Quinta dataset has `r nrow(laquinta)` rows and `r ncol(laquinta)` columns. Each row represents one La Quinta hotel location. The variables are address, city, state, zip, longitude, and latitude.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 1-2", and push your changes.**
 
@@ -150,14 +151,29 @@ Take a look at the websites that the data come from (linked above). Are there an
 **Browse the websites and list the countries:**
 
 **La Quinta locations outside the US:**
-- 
-- 
-- 
+- Canada
+- Mexico
+- China
+- New Zealand
+- Georgia
+- Türkiye (Turkey)
+- United Arab Emirates
+- Colombia
+- Ecuador
 
 **Denny's locations outside the US:**
-- 
-- 
-- 
+- Canada
+- Mexico
+- Philippines
+- Honduras
+- New Zealand
+- United Arab Emirates
+- Guatemala
+- Costa Rica
+- El Salvador
+- Indonesia
+- Curaçao
+- United Kingdom
 
 ---
 
