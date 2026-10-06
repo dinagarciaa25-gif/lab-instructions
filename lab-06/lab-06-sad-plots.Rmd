@@ -125,9 +125,9 @@ But before we do so, a thought exercise: *How many rows will the long-format dat
 
 **Think about it:** The data will have a row for each combination of year and faculty type. If there are 5 faculty types and 11 years of data, how many rows will we have?
 
-**Your answer:** The long-format data will have _____ rows.
+**Your answer:** The long-format data will have 55 rows.
 
-**Calculation:** _____ faculty types × _____ years = _____ rows
+**Calculation:** 5 faculty types × 11 years = 55 rows
 
 ---
 
@@ -216,19 +216,19 @@ staff_long %>%
 Include the line plot you made above in your report and make sure the figure width is large enough to make it legible. Also add a title, improve the axis labels, and fix the legend label.
 
 **Add these improvements to your plot:**
-```{r improved-staff-plot, fig.width = 10, fig.fullwidth = TRUE, eval = FALSE}
+```{r improved-staff-plot, fig.width = 10, fig.fullwidth = TRUE, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 staff_long %>%
-  ggplot(aes(x = year, 
-             y = value, 
-             group = faculty_type, 
+  ggplot(aes(x = year,
+             y = value,
+             group = faculty_type,
              color = faculty_type)) +
   geom_line() +
   labs(
-    title = "___",
-    x = "___",
-    y = "___",
-    color = "___"
+    title = "Changes in Instructional Staff, 1975–2011",
+    x = "Year",
+    y = "Percentage of Instructional Staff (%)",
+    color = "Staff Type"
   )
 ```
 
@@ -271,17 +271,17 @@ Suppose the objective of this plot was to show that the proportion of part-time 
 
 **Your proposed changes (write at least 3):**
 
-- Change 1: 
+- Change 1: Make the part-time faculty line blue and the other lines gray.
 
-  Why: 
+  Why: This draws attention to part-time faculty while keeping the other trends visible for comparison.
 
-- Change 2: 
+- Change 2: Make the part-time faculty line thicker. 
 
-  Why: 
+  Why: A thicker line makes its increase easier to follow across the years.
 
-- Change 3: 
+- Change 3: Add a title emphasizing the increase and labels showing the first and last percentages.
 
-  Why: 
+  Why: These help readers quickly understand the main trend and how much the percentage changed.
   
 ---
 
@@ -311,12 +311,38 @@ annotate("text", x = 2005, y = 40, label = "Part-time faculty rising")
 ```
 
 **Your improved visualization:**
-```{r storytelling-plot, fig.width = 10, fig.fullwidth = TRUE, eval = FALSE}
+```{r storytelling-plot, fig.width = 10, fig.fullwidth = TRUE, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 # Your code here - build on your Exercise 1 code
+part_time <- staff_long %>%
+  filter(faculty_type == "Part-Time Faculty")
+
+endpoints <- part_time %>%
+  filter(year == min(year) | year == max(year))
+
+ggplot(staff_long,
+       aes(x = year, y = value, group = faculty_type)) +
+  geom_line(color = "gray65", linewidth = 0.6) +
+  geom_line(data = part_time,
+            color = "blue", linewidth = 1.3) +
+  geom_point(data = endpoints, color = "blue", size = 3) +
+  geom_text(
+    data = endpoints,
+    aes(label = paste0(value, "%")),
+    color = "blue", vjust = -1
+  ) +
+  labs(
+    title = "Part-Time Faculty Increased Between 1975 and 2011",
+    subtitle = "Blue highlights part-time faculty; gray shows other staff types",
+    x = "Year",
+    y = "Percentage of Instructional Staff (%)"
+  ) +
+  theme_minimal()
 ```
 
 **Explain your design decisions:** Write a brief paragraph (3-5 sentences) describing the changes you made and how they help tell the story that part-time faculty proportions have increased.
+
+I used a thicker blue line to highlight part-time faculty and gray lines for the other staff types. This makes the part-time trend easier to follow while still allowing comparison with the other groups. I added labels showing the increase from 24% in 1975 to 41.3% in 2011. The title and clear axis labels help readers understand the main story and what the percentages represent.
 
 
 
