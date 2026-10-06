@@ -371,23 +371,23 @@ Can you help them improve it? First, brainstorm how you would improve it. Write 
 
 **Problems with the original plot:**
 
-- Problem 1: 
+- Problem 1: The country labels are small and angled, making them difficult to read.
 
-- Problem 2: 
+- Problem 2: There are too many colors and tiny slices to identify easily.
 
-- Problem 3: 
+- Problem 3: The 3D pie charts distort the slices and make countries hard to compare.
 
-- Problem 4: 
+- Problem 4: China’s large production makes the smaller countries difficult to see in the left graph.
 
 **Proposed improvements:** For each problem above, suggest a solution:
 
-- Improvement 1: 
+- Improvement 1: Replace the area graph and pie charts with horizontal bar charts.
 
-- Improvement 2: 
+- Improvement 2:Use readable country labels and two distinct colors for the production types. 
 
-- Improvement 3: 
+- Improvement 3: Sort countries by total production to make rankings easier to compare.
 
-- Improvement 4: 
+- Improvement 4: Show capture and aquaculture in separate panels with consistent country ordering.
 
 **Possible issues to consider:**
 
@@ -401,7 +401,7 @@ Can you help them improve it? First, brainstorm how you would improve it. Write 
 ---
 
 First, let's load the data:
-```{r load-data-fisheries, eval = TRUE}
+```{r load-data-fisheries, eval = FALSE}
 fisheries <- read_csv("data/fisheries.csv")
 ```
 
@@ -450,17 +450,54 @@ labs(title = "...", x = "...", y = "...", fill = "...")
 ```
 
 **Your improved visualization:**
-```{r improved-fisheries-plot, fig.width = 8, fig.height = 10, eval = FALSE}
+```{r improved-fisheries-plot, fig.width = 8, fig.height = 10, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 # Your code here
+fisheries <- read_csv("data/fisheries.csv")
+fisheries_long <- fisheries %>%
+  filter(total >= 100000) %>%
+slice_max(total, n = 20, with_ties = FALSE) %>%
+  mutate(country = fct_reorder(country, total)) %>%
+  pivot_longer(
+    cols = c(capture, aquaculture),
+    names_to = "type",
+    values_to = "production"
+  ) %>%
+  mutate(type = recode(type,
+                       capture = "Capture",
+                       aquaculture = "Aquaculture"))
+
+ggplot(fisheries_long,
+       aes(x = production / 1000000,
+           y = country,
+           fill = type)) +
+  geom_col() +
+  facet_wrap(~type, nrow = 1) +
+  scale_fill_manual(
+    values = c("Capture" = "#0072B2",
+               "Aquaculture" = "#E69F00")
+  ) +
+  labs(
+    title = "Fisheries Production by Country, 2016",
+    subtitle = "Top 20 countries by total fisheries production",
+    x = "Production (millions of tons)",
+    y = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.grid.major.y = element_blank()
+  )
 ```
 
 **Explain your design decisions:** Write a paragraph (4-6 sentences) describing the changes you made and how they improve the visualization.
 
+I replaced the original charts with horizontal bars to make country comparisons easier. I separated capture and aquaculture into two panels and used a different color for each. Countries are ordered by total production, making the largest producers easy to identify. I included only the top 20 countries so the labels remain readable. Showing all countries was still not readable so allowing the top 20 would make the graph to be understandable. The title identifies the year, and the horizontal axis shows production in millions of tons.
 
 
 **Did your improved visualization accomplish your goals?** Are there any improvements you proposed that you weren't able to implement? If so, what are they?
 
+I accomplished my main goals of improving readability and making comparisons easier. However, China’s large production still makes smaller countries’ bars difficult to compare on the shared scale. Showing only the top 20 countries also leaves out smaller producers.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 4-5", and push your changes.**
