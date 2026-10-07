@@ -316,9 +316,9 @@ Variable & Type (categorical/numerical) & More specific type \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-outcome & & \\
-smoker & & \\
-age & & \\
+outcome & categorical & Binary, nominal \\
+smoker & categorical & Binary, nominal \\
+age & numerical & whole years \\
 \end{longtable}
 
 \textbf{Part B: Create visualizations}
@@ -332,39 +332,52 @@ Create appropriate visualizations for each variable.
 \CommentTok{\# Remember to change eval=FALSE to eval=TRUE!}
 
 \CommentTok{\# Outcome variable}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+}
+\FunctionTok{ggplot}\NormalTok{(Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ outcome)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"seagreen"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}
-    \AttributeTok{title =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{y =} \StringTok{"\_\_\_"}
-\NormalTok{  )}
-
-\CommentTok{\# Smoker variable}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_bar}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}
-    \AttributeTok{title =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{y =} \StringTok{"\_\_\_"}
+    \AttributeTok{title =} \StringTok{"Participants\textquotesingle{} Outcomes After 20 Years"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Outcome"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Number of Participants"}
 \NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
+
+\includegraphics{lab-07-simpsons-paradox_files/figure-latex/visualize-categorical-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ smoker)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{fill =} \StringTok{"deeppink3"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Participants\textquotesingle{} Smoking Status at Baseline"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Smoker"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Number of Participants"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lab-07-simpsons-paradox_files/figure-latex/visualize-categorical-2}
 
 \textbf{For numerical variable (age):}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Remember to change eval=FALSE to eval=TRUE!}
-\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =}\NormalTok{ \_\_\_) }\SpecialCharTok{+}
+\FunctionTok{ggplot}\NormalTok{(Whickham, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}
+    \AttributeTok{binwidth =} \DecValTok{5}\NormalTok{,}
+    \AttributeTok{fill =} \StringTok{"plum"}\NormalTok{,}
+    \AttributeTok{color =} \StringTok{"white"}
+\NormalTok{  ) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}
-    \AttributeTok{title =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{x =} \StringTok{"\_\_\_"}\NormalTok{,}
-    \AttributeTok{y =} \StringTok{"\_\_\_"}
+    \AttributeTok{title =} \StringTok{"Participants\textquotesingle{} Ages at Baseline"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Age (years)"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Number of Participants"}
 \NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
+
+\includegraphics{lab-07-simpsons-paradox_files/figure-latex/visualize-age-1}
 
 \textbf{Hint:} Try a binwidth of 5 or 10 for age.
 
@@ -382,7 +395,9 @@ years, what difference would you expect to see in their health outcomes?
 
 \textbf{Your prediction:}
 
-I would expect that smokers would have
+I would expect that smokers would have a higher proportion of deaths and
+a lower proportion of survivors after 20 years compared with
+non-smokers.
 
 🧶 ✅ ⬆️ \textbf{Knit, commit with message ``Completed Exercises 3-4'',
 and push your changes.}

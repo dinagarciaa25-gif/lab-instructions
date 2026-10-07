@@ -139,48 +139,51 @@ Run `glimpse(Whickham)` in your Console to see the variables.
 
 **Variable types:**
 
-| Variable | Type (categorical/numerical) | More specific type |
+| Variable | Type (categorical/numerical)| More specific type |
 |:---------|:----------------------------|:-------------------|
-| outcome  |                             |                    |
-| smoker   |                             |                    |
-| age      |                             |                    |
+| outcome  | categorical                 | Binary, nominal    |
+| smoker   | categorical                 | Binary, nominal    |
+| age      | numerical                   | whole  years       |
 
 **Part B: Create visualizations**
 
 Create appropriate visualizations for each variable.
 
 **For categorical variables (outcome and smoker):**
-```{r visualize-categorical, eval = FALSE}
+```{r visualize-categorical, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 
 # Outcome variable
-ggplot(data = Whickham, aes(x = ___)) +
-  geom_bar() +
+ggplot(Whickham, aes(x = outcome)) +
+  geom_bar(fill = "seagreen") +
   labs(
-    title = "___",
-    x = "___",
-    y = "___"
+    title = "Participants' Outcomes After 20 Years",
+    x = "Outcome",
+    y = "Number of Participants"
   )
 
-# Smoker variable
-ggplot(data = Whickham, aes(x = ___)) +
-  geom_bar() +
+ggplot(Whickham, aes(x = smoker)) +
+  geom_bar(fill = "deeppink3") +
   labs(
-    title = "___",
-    x = "___",
-    y = "___"
+    title = "Participants' Smoking Status at Baseline",
+    x = "Smoker",
+    y = "Number of Participants"
   )
 ```
 
 **For numerical variable (age):**
-```{r visualize-age, eval = FALSE}
+```{r visualize-age, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-ggplot(data = Whickham, aes(x = ___)) +
-  geom_histogram(binwidth = ___) +
+ggplot(Whickham, aes(x = age)) +
+  geom_histogram(
+    binwidth = 5,
+    fill = "plum",
+    color = "white"
+  ) +
   labs(
-    title = "___",
-    x = "___",
-    y = "___"
+    title = "Participants' Ages at Baseline",
+    x = "Age (years)",
+    y = "Number of Participants"
   )
 ```
 
@@ -198,7 +201,7 @@ What would you expect the relationship between smoking status and health outcome
 
 **Your prediction:**
 
-I would expect that smokers would have 
+I would expect that smokers would have a higher proportion of deaths and a lower proportion of survivors after 20 years compared with non-smokers. 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 3-4", and push your changes.**
 
