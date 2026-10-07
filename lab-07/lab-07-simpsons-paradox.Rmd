@@ -106,7 +106,8 @@ What type of study do you think these data come from: observational or experimen
 
 **Your answer:** 
 
-This is an __________ study because 
+This is an observational study because researchers recorded participants’ smoking status and followed their health outcomes after 20 years. They did not assign participants to smoke or not smoke.
+
 
 ---
 
@@ -118,7 +119,7 @@ How many observations are in this dataset? What does each observation represent?
 
 **Your answer:** 
 
-The dataset has _____ observations. Each observation represents 
+The dataset has `r nrow(Whickham)` observations. Each observation represents one participant, including their age, smoking status at baseline, and whether they were alive or dead 20 years later. 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 1-2", and push your changes.**
 

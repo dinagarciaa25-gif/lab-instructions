@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.8.26)  7 OCT 2026 02:23
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.8.26)  7 OCT 2026 02:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,7 +824,7 @@ ex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=t
 ex-text;!
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 318; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 322; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -833,7 +833,7 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 318; it cannot be
 
 [3]
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 376; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 380; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -850,7 +850,7 @@ ex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=t
 ex-text;!
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 442; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 446; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -871,9 +871,9 @@ ex-text;!
 Missing character: There is no ≤ (U+2264) in font [lmroman10-regular]:mapping=t
 ex-text;!
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 495.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 499.
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 522; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 526; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -881,13 +881,13 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 522; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [6]
-Overfull \hbox (43.03003pt too wide) in paragraph at lines 575--577
+Overfull \hbox (43.03003pt too wide) in paragraph at lines 579--581
 []\TU/lmr/bx/n/10 Hint: \TU/lmr/m/n/10 Use the same aesthetics as Exercise 5, b
 ut add \TU/lmtt/m/n/10 facet_wrap(~age_cat)  
  []
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 597; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 601; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -895,7 +895,7 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 597; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [7]
-Overfull \hbox (110.89001pt too wide) in paragraph at lines 609--611
+Overfull \hbox (110.89001pt too wide) in paragraph at lines 613--615
 []\TU/lmr/bx/n/10 Overall (from Exercise 5): \TU/lmr/m/n/10 Smokers appeared to
  have _____________________ 
  []
@@ -908,23 +908,23 @@ Missing character: There is no ⬆ (U+2B06) in font [lmroman10-regular]:mapping=
 ex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=t
 ex-text;!
-LaTeX Font Info:    Trying to load font information for U+msa on input line 643
+LaTeX Font Info:    Trying to load font information for U+msa on input line 647
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 643
+LaTeX Font Info:    Trying to load font information for U+msb on input line 647
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (0.53004pt too wide) in paragraph at lines 669--672
+Overfull \hbox (0.53004pt too wide) in paragraph at lines 673--676
 []\TU/lmr/bx/n/10 Age affects smoking status: \TU/lmr/m/n/10 In this study, smo
 kers were younger 
  []
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 675; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 679; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -932,19 +932,19 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 675; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [8]
-Overfull \hbox (6.00002pt too wide) in paragraph at lines 714--717
+Overfull \hbox (6.00002pt too wide) in paragraph at lines 718--721
 []\TU/lmr/bx/n/10 Bar plot shows counts instead of proportions \TU/lmr/m/n/10 →
  Use \TU/lmtt/m/n/10 position 
  []
 
 
-Overfull \hbox (16.68pt too wide) in paragraph at lines 720--723
+Overfull \hbox (16.68pt too wide) in paragraph at lines 724--727
 []\TU/lmr/bx/n/10 Facets not appearing \TU/lmr/m/n/10 → Check spelling of \TU/l
 mtt/m/n/10 age_cat \TU/lmr/m/n/10 in \TU/lmtt/m/n/10 facet_wrap()  
  []
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 754; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 758; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -960,7 +960,7 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                You may not be able to run BibTeX.
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 801; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 805; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
