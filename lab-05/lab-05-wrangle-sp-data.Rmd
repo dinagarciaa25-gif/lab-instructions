@@ -449,13 +449,55 @@ The distribution is right-skewed, with most distances below about 125 km and a f
 Repeat the same analysis for Texas.
 
 **Adapt the template from Exercise 9, changing NC to TX:**
-```{r tx-analysis, eval = FALSE}
+```{r tx-analysis, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 # Your code here - adapt from Exercise 9
+# Filter for Texas
+dn_tx <- dennys %>%
+  filter(state == "TX")
+
+lq_tx <- laquinta %>%
+  filter(state == "TX")
+
+# Join all possible pairings
+dn_lq_tx <- full_join(dn_tx, lq_tx, by = "state")
+
+# Calculate distances
+dn_lq_tx <- dn_lq_tx %>%
+  mutate(distance = haversine(
+    long1 = longitude.x,
+    lat1 = latitude.x,
+    long2 = longitude.y,
+    lat2 = latitude.y
+  ))
+
+# Find the nearest La Quinta for each Denny's
+dn_lq_tx_mindist <- dn_lq_tx %>%
+  group_by(address.x) %>%
+  summarise(closest = min(distance))
+
+# Create a histogram
+ggplot(data = dn_lq_tx_mindist, aes(x = closest)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "white") +
+  labs(
+    title = "Distance to the Nearest La Quinta in Texas",
+    x = "Distance (km)",
+    y = "Number of Denny's Locations"
+  )
+
+# Summary statistics
+dn_lq_tx_mindist %>%
+  summarise(
+    min = min(closest),
+    max = max(closest),
+    mean = mean(closest),
+    median = median(closest),
+    sd = sd(closest)
+  )
 ```
 
 **Describe the distribution for Texas:**
-
+The distribution is strongly right-skewed. Most Denny's locations are within about 10 km of their nearest La Quinta, but a few are much farther away. The mean is about 5.79 km, which is higher than the median of 3.37 km. The distances range from 0.016 to 60.58 km, with a standard deviation of about 8.83 km. The larger distances create a long right tail, with a possible outlier near 60 km.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 10", and push your changes.**
 
