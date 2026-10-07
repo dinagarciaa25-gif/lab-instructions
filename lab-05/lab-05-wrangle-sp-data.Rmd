@@ -508,13 +508,55 @@ The distribution is strongly right-skewed. Most Denny's locations are within abo
 Repeat the same analysis for a state of your choosing, different than the ones we covered so far.
 
 **Which state did you choose?** _____
-```{r your-state-analysis, eval = FALSE}
+```{r your-state-analysis, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 # Your code here - adapt from Exercise 9
+# Filter for California
+dn_ca <- dennys %>%
+  filter(state == "CA")
+
+lq_ca <- laquinta %>%
+  filter(state == "CA")
+
+# Join all possible pairings
+dn_lq_ca <- full_join(dn_ca, lq_ca, by = "state")
+
+# Calculate distances
+dn_lq_ca <- dn_lq_ca %>%
+  mutate(distance = haversine(
+    long1 = longitude.x,
+    lat1 = latitude.x,
+    long2 = longitude.y,
+    lat2 = latitude.y
+  ))
+
+# Find the nearest La Quinta for each Denny's
+dn_lq_ca_mindist <- dn_lq_ca %>%
+  group_by(address.x) %>%
+  summarise(closest = min(distance))
+
+# Create a histogram
+ggplot(data = dn_lq_ca_mindist, aes(x = closest)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "white") +
+  labs(
+    title = "Distance to the Nearest La Quinta in California",
+    x = "Distance (km)",
+    y = "Number of Denny's Locations"
+  )
+
+# Summary statistics
+dn_lq_ca_mindist %>%
+  summarise(
+    min = min(closest),
+    max = max(closest),
+    mean = mean(closest),
+    median = median(closest),
+    sd = sd(closest)
+  )
 ```
 
 **Describe the distribution for your chosen state:**
-
+The distribution is strongly right-skewed. Most Denny's locations are within about 30 km of their nearest La Quinta, but a few are much farther away. The mean is about 22.08 km, which is higher than the median of 11.90 km. The distances range from 0.016 to 253.46 km, with a standard deviation of about 33.05 km. There is a long right tail with possible outliers around 200–253 km.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 11", and push your changes.**
 
