@@ -529,7 +529,7 @@ address.x, city.x, state, zip.x, longitude.x, latitude.x, address.y, city.y, zip
 <div id="exercise-5" class="section level2">
 <h2>Exercise 5</h2>
 <p>What function from the tidyverse do we use to add a new variable to a data frame while keeping the existing variables?</p>
-<p><strong>Your answer:</strong> _____</p>
+<p><strong>Your answer:</strong> mutate()</p>
 <hr />
 <p>One way of calculating the distance between any two points on the earth is to use the Haversine distance formula. This formula takes into account the fact that the earth is not flat, but instead spherical.</p>
 <p>This function is not available in base R, but here it is as a custom function we can use:</p>
@@ -561,14 +561,13 @@ address.x, city.x, state, zip.x, longitude.x, latitude.x, address.y, city.y, zip
 <h2>Exercise 6</h2>
 <p>Calculate the distances between all pairs of Denny’s and La Quinta locations and save this variable as <code>distance</code>. Make sure to save this variable in the <code>dn_lq_ak</code> data frame so that you can use it later.</p>
 <p><strong>Remember:</strong> Use the <code>&lt;-</code> assignment operator to save the result back to <code>dn_lq_ak</code>, just like in Lab 04 when we added the <code>country</code> variable.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Remember to change eval=FALSE to eval=TRUE!</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>dn_lq_ak <span class="ot">&lt;-</span> dn_lq_ak <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance =</span> <span class="fu">haversine</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="at">long1 =</span> ___,      <span class="co"># longitude from Denny&#39;s (has .x suffix)</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="at">lat1 =</span> ___,       <span class="co"># latitude from Denny&#39;s (has .x suffix)</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="at">long2 =</span> ___,      <span class="co"># longitude from La Quinta (has .y suffix)</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="at">lat2 =</span> ___        <span class="co"># latitude from La Quinta (has .y suffix)</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  ))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>dn_lq_ak <span class="ot">&lt;-</span> dn_lq_ak <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance =</span> <span class="fu">haversine</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="at">long1 =</span> longitude.x,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="at">lat1 =</span> latitude.x,</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="at">long2 =</span> longitude.y,</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="at">lat2 =</span> latitude.y</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  ))</span></code></pre></div>
 <p><strong>Hints:</strong></p>
 <ul>
 <li>Denny’s coordinates have <code>.x</code> suffix: <code>longitude.x</code> and <code>latitude.x</code></li>
