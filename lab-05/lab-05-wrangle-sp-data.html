@@ -468,7 +468,7 @@ text-align: center;
 <h2>Exercise 3</h2>
 <p>How many pairings are there between all Denny’s and all La Quinta locations in Alaska, i.e. how many distances do we need to calculate between the locations of these establishments in Alaska?</p>
 <p><strong>Hint:</strong> If there are 3 Denny’s and 2 La Quinta locations, how many total pairings are there?</p>
-<p><strong>Your answer:</strong> There are _____ pairings between Denny’s and La Quinta locations in Alaska.</p>
+<p><strong>Your answer:</strong> There are 6 pairings between Denny’s and La Quinta locations in Alaska.</p>
 <hr />
 </div>
 <div id="joining-data-frames" class="section level2">
@@ -515,8 +515,9 @@ text-align: center;
 <h2>Exercise 4</h2>
 <p>How many observations are in the joined <code>dn_lq_ak</code> data frame? What are the names of the variables in this data frame?</p>
 <p><strong>Your answers:</strong></p>
-<p><strong>Number of observations:</strong> _____</p>
-<p><strong>Variable names:</strong> Run <code>names(dn_lq_ak)</code> in your Console and list them below:</p>
+<p><strong>Number of observations:</strong> 6</p>
+<p><strong>Variable names:</strong> Run <code>names(dn_lq_ak)</code> in your Console and list them below:
+address.x, city.x, state, zip.x, longitude.x, latitude.x, address.y, city.y, zip.y, longitude.y, latitude.y</p>
 <p><strong>Note about variable names:</strong> You’ll notice <code>.x</code> and <code>.y</code> suffixes on many variables. The <code>.x</code> means the variable comes from the first data frame (<code>dn_ak</code>), and <code>.y</code> means it comes from the second data frame (<code>lq_ak</code>). These suffixes are added because both data frames have variables with the same names (like <code>address</code>, <code>city</code>, <code>longitude</code>, <code>latitude</code>), and R can’t have duplicate column names.</p>
 <p>🧶 ✅ ⬆️ <strong>Knit, commit with message “Completed Exercises 3-4”, and push your changes.</strong></p>
 <hr />

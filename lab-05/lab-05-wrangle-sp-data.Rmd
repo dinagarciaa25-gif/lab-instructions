@@ -169,7 +169,7 @@ How many pairings are there between all Denny's and all La Quinta locations in A
 
 **Hint:** If there are 3 Denny's and 2 La Quinta locations, how many total pairings are there?
 
-**Your answer:** There are _____ pairings between Denny's and La Quinta locations in Alaska.
+**Your answer:** There are 6 pairings between Denny's and La Quinta locations in Alaska.
 
 ---
 
@@ -224,10 +224,10 @@ How many observations are in the joined `dn_lq_ak` data frame? What are the name
 
 **Your answers:**
 
-**Number of observations:** _____
+**Number of observations:** `r nrow(dn_lq_ak)`
 
 **Variable names:** Run `names(dn_lq_ak)` in your Console and list them below:
-
+address.x, city.x, state, zip.x, longitude.x, latitude.x, address.y, city.y, zip.y, longitude.y, latitude.y
 
 
 **Note about variable names:** You'll notice `.x` and `.y` suffixes on many variables. The `.x` means the variable comes from the first data frame (`dn_ak`), and `.y` means it comes from the second data frame (`lq_ak`). These suffixes are added because both data frames have variables with the same names (like `address`, `city`, `longitude`, `latitude`), and R can't have duplicate column names.
