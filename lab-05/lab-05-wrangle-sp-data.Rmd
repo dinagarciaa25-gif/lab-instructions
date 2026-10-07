@@ -389,40 +389,40 @@ Repeat the same analysis for North Carolina:
   Step (v) visualize and describe the distribution of these shortest distances using appropriate summary statistics
 
 **Here's a template you can adapt from the Alaska code:**
-```{r nc-analysis, eval = FALSE}
+```{r nc-analysis, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 
-# (i) Filter for NC
+# (i) Filter for North Carolina
 dn_nc <- dennys %>%
-  filter(state == "___")
+  filter(state == "NC")
 
 lq_nc <- laquinta %>%
-  filter(state == "___")
+  filter(state == "NC")
 
-# (ii) Join the data
-dn_lq_nc <- full_join(___, ___, by = "state")
+# (ii) Join all possible pairings
+dn_lq_nc <- full_join(dn_nc, lq_nc, by = "state")
 
-# (iii) Calculate distances
+# (iii) Calculate distances in kilometers
 dn_lq_nc <- dn_lq_nc %>%
   mutate(distance = haversine(
-    long1 = ___,
-    lat1 = ___,
-    long2 = ___,
-    lat2 = ___
+    long1 = longitude.x,
+    lat1 = latitude.x,
+    long2 = longitude.y,
+    lat2 = latitude.y
   ))
 
-# (iv) Find minimum distances
+# (iv) Find the nearest La Quinta for each Denny's
 dn_lq_nc_mindist <- dn_lq_nc %>%
-  group_by(___) %>%
-  summarise(closest = min(___))
+  group_by(address.x) %>%
+  summarise(closest = min(distance))
 
-# (v) Visualize
-ggplot(data = dn_lq_nc_mindist, aes(x = ___)) +
-  geom_histogram(binwidth = ___) +
+# (v) Visualize the nearest distances
+ggplot(data = dn_lq_nc_mindist, aes(x = closest)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "white") +
   labs(
-    title = "___",
-    x = "___",
-    y = "___"
+    title = "Distance to the Nearest La Quinta in North Carolina",
+    x = "Distance (km)",
+    y = "Number of Denny's Locations"
   )
 
 # Summary statistics
@@ -437,7 +437,7 @@ dn_lq_nc_mindist %>%
 ```
 
 **Describe the distribution for North Carolina:**
-
+The distribution is right-skewed, with most distances below about 125 km and a few larger distances around 165–188 km. The mean is about 65.44 km, which is higher than the median of 53.46 km. The distances range from 1.78 to 187.94 km, with a standard deviation of about 53.42 km. This shows a wide spread: some Denny's locations are close to a La Quinta, while others are much farther away.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 9", and push your changes.**
