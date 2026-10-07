@@ -119,7 +119,7 @@ dn_ak <- dennys %>%           # Start with dennys dataset
 
 **How many Denny's locations are in Alaska?** Use inline code to report the number.
 
-**Your answer:** There are _____ Denny's locations in Alaska.
+**Your answer:** There are 3 Denny's locations in Alaska.
 
 **Hint:** You can use inline code with `nrow(dn_ak)` to get the count.
 
@@ -141,7 +141,7 @@ lq_ak <- laquinta %>%         # Start with laquinta dataset
 
 **How many La Quinta locations are in Alaska?** Use inline code to report the number.
 
-**Your answer:** There are _____ La Quinta locations in Alaska.
+**Your answer:** There are 2 La Quinta locations in Alaska.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 1-2", and push your changes.**
 
