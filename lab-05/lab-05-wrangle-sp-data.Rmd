@@ -568,17 +568,17 @@ Among the states you examined, where is Mitch Hedberg's joke most likely to hold
 
 **Create a comparison table:**
 
-| State | Median Distance (km) | Mean Distance (km) | Notes |
-|:------|:---------------------|:-------------------|:------|
-| Alaska |  |  |  |
-| North Carolina |  |  |  |
-| Texas |  |  |  |
-| (Your state) |  |  |  |
+| State          | Median Distance (km) | Mean Distance (km) | Notes                                     |
+|:---------------|---------------------:|-------------------:|:------------------------------------------|
+| Alaska         | 5.20                 | 4.41               | All three distances are within 6 km       |
+| North Carolina | 53.46                | 65.44              | Largest mean and median distances         |
+| Texas          | 3.37                 | 5.79               | Smallest median; most distances are short |
+| California     | 11.90                | 22.08              | Long right tail with some large distances |
 
 **Your analysis:**
 
 Which state has the smallest distances on average? What does this tell us about where the joke holds true?
-
+Mitch Hedberg's joke is most likely to hold true in Texas because it has the smallest median distance, about 3.37 km. This means a typical Denny's location is closer to a La Quinta in Texas than in the other states examined. Alaska has the smallest mean distance at 4.41 km, and all three of its Denny's locations are within 6 km of a La Quinta. Both states support the joke, but Texas has the shorter typical distance based on the median.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 12", and push your changes.**
