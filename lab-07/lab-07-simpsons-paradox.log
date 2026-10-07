@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.8.26)  7 OCT 2026 02:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.8.26)  7 OCT 2026 02:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,8 +882,16 @@ Missing character: There is no ⬆ (U+2B06) in font [lmroman10-regular]:mapping=
 ex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=t
 ex-text;!
+File: lab-07-simpsons-paradox_files/figure-latex/smoker-outcome-viz-1.pdf Graph
+ic file (type pdf)
+<use lab-07-simpsons-paradox_files/figure-latex/smoker-outcome-viz-1.pdf>
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 452; it cannot be
+Overfull \hbox (12.01646pt too wide) in paragraph at lines 436--437
+[][]  
+ []
+
+
+Package fontspec Warning: \addfontfeature(s) ignored on line 438; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -891,6 +899,15 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 452; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [6]
+
+Package fontspec Warning: \addfontfeature(s) ignored on line 494; it cannot be
+(fontspec)                used with a font that wasn't selected by a fontspec
+(fontspec)                command.
+(fontspec)                 
+(fontspec)                 The current font is "\TU/lmr/m/n/10 ".
+(fontspec)                  The requested feature is "LetterSpace=10". 
+
+[7]
 Missing character: There is no 🧶 (U+1F9F6) in font [lmroman10-regular]:mapping=
 tex-text;!
 Missing character: There is no ✅ (U+2705) in font [lmroman10-regular]:mapping=t
@@ -904,23 +921,9 @@ ex-text;!
 Missing character: There is no ≤ (U+2264) in font [lmroman10-regular]:mapping=t
 ex-text;!
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 514.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 534.
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 535; it cannot be
-(fontspec)                used with a font that wasn't selected by a fontspec
-(fontspec)                command.
-(fontspec)                 
-(fontspec)                 The current font is "\TU/lmr/m/n/10 ".
-(fontspec)                  The requested feature is "LetterSpace=10". 
-
-[7]
-Overfull \hbox (43.03003pt too wide) in paragraph at lines 594--596
-[]\TU/lmr/bx/n/10 Hint: \TU/lmr/m/n/10 Use the same aesthetics as Exercise 5, b
-ut add \TU/lmtt/m/n/10 facet_wrap(~age_cat)  
- []
-
-
-Package fontspec Warning: \addfontfeature(s) ignored on line 613; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 571; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -928,7 +931,21 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 613; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [8]
-Overfull \hbox (110.89001pt too wide) in paragraph at lines 628--630
+Overfull \hbox (43.03003pt too wide) in paragraph at lines 614--616
+[]\TU/lmr/bx/n/10 Hint: \TU/lmr/m/n/10 Use the same aesthetics as Exercise 5, b
+ut add \TU/lmtt/m/n/10 facet_wrap(~age_cat)  
+ []
+
+
+Package fontspec Warning: \addfontfeature(s) ignored on line 644; it cannot be
+(fontspec)                used with a font that wasn't selected by a fontspec
+(fontspec)                command.
+(fontspec)                 
+(fontspec)                 The current font is "\TU/lmr/m/n/10 ".
+(fontspec)                  The requested feature is "LetterSpace=10". 
+
+[9]
+Overfull \hbox (110.89001pt too wide) in paragraph at lines 648--650
 []\TU/lmr/bx/n/10 Overall (from Exercise 5): \TU/lmr/m/n/10 Smokers appeared to
  have _____________________ 
  []
@@ -941,43 +958,23 @@ Missing character: There is no ⬆ (U+2B06) in font [lmroman10-regular]:mapping=
 ex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=t
 ex-text;!
-LaTeX Font Info:    Trying to load font information for U+msa on input line 662
+LaTeX Font Info:    Trying to load font information for U+msa on input line 682
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 662
+LaTeX Font Info:    Trying to load font information for U+msb on input line 682
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (0.53004pt too wide) in paragraph at lines 688--691
+Overfull \hbox (0.53004pt too wide) in paragraph at lines 708--711
 []\TU/lmr/bx/n/10 Age affects smoking status: \TU/lmr/m/n/10 In this study, smo
 kers were younger 
  []
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 694; it cannot be
-(fontspec)                used with a font that wasn't selected by a fontspec
-(fontspec)                command.
-(fontspec)                 
-(fontspec)                 The current font is "\TU/lmr/m/n/10 ".
-(fontspec)                  The requested feature is "LetterSpace=10". 
-
-[9]
-Overfull \hbox (6.00002pt too wide) in paragraph at lines 733--736
-[]\TU/lmr/bx/n/10 Bar plot shows counts instead of proportions \TU/lmr/m/n/10 →
- Use \TU/lmtt/m/n/10 position 
- []
-
-
-Overfull \hbox (16.68pt too wide) in paragraph at lines 739--742
-[]\TU/lmr/bx/n/10 Facets not appearing \TU/lmr/m/n/10 → Check spelling of \TU/l
-mtt/m/n/10 age_cat \TU/lmr/m/n/10 in \TU/lmtt/m/n/10 facet_wrap()  
- []
-
-
-Package fontspec Warning: \addfontfeature(s) ignored on line 773; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 729; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
@@ -985,6 +982,26 @@ Package fontspec Warning: \addfontfeature(s) ignored on line 773; it cannot be
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
 [10]
+Overfull \hbox (6.00002pt too wide) in paragraph at lines 753--756
+[]\TU/lmr/bx/n/10 Bar plot shows counts instead of proportions \TU/lmr/m/n/10 →
+ Use \TU/lmtt/m/n/10 position 
+ []
+
+
+Overfull \hbox (16.68pt too wide) in paragraph at lines 759--762
+[]\TU/lmr/bx/n/10 Facets not appearing \TU/lmr/m/n/10 → Check spelling of \TU/l
+mtt/m/n/10 age_cat \TU/lmr/m/n/10 in \TU/lmtt/m/n/10 facet_wrap()  
+ []
+
+
+Package fontspec Warning: \addfontfeature(s) ignored on line 807; it cannot be
+(fontspec)                used with a font that wasn't selected by a fontspec
+(fontspec)                command.
+(fontspec)                 
+(fontspec)                 The current font is "\TU/lmr/m/n/10 ".
+(fontspec)                  The requested feature is "LetterSpace=10". 
+
+[11]
 Missing character: There is no ✓ (U+2713) in font [lmroman10-bold]:mapping=tex-
 text;!
 
@@ -993,14 +1010,14 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                You may not be able to run BibTeX.
 
 
-Package fontspec Warning: \addfontfeature(s) ignored on line 820; it cannot be
+Package fontspec Warning: \addfontfeature(s) ignored on line 840; it cannot be
 (fontspec)                used with a font that wasn't selected by a fontspec
 (fontspec)                command.
 (fontspec)                 
 (fontspec)                 The current font is "\TU/lmr/m/n/10 ".
 (fontspec)                  The requested feature is "LetterSpace=10". 
 
-[11] (./lab-07-simpsons-paradox.aux)
+[12] (./lab-07-simpsons-paradox.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1010,12 +1027,12 @@ Package rerunfilecheck Info: File `lab-07-simpsons-paradox.out' has not changed
 (rerunfilecheck)             Checksum: 7753602654EB38C4FB6B0915F201C023;211.
  ) 
 Here is how much of TeX's memory you used:
- 16864 strings out of 476867
- 315273 string characters out of 5804702
+ 16875 strings out of 476867
+ 316035 string characters out of 5804702
  1931627 words of memory out of 5000000
- 38466 multiletter control sequences out of 15000+600000
+ 38476 multiletter control sequences out of 15000+600000
  560675 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 114i,12n,124p,386b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,124p,386b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on lab-07-simpsons-paradox.pdf (11 pages).
+Output written on lab-07-simpsons-paradox.pdf (12 pages).
