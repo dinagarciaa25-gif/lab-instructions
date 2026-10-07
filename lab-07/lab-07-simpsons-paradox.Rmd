@@ -280,13 +280,13 @@ Create a new variable called `age_cat` using the following scheme:
 - age > 64 → "65+"
 
 **Use `case_when()` to create the categorical variable:**
-```{r create-age-cat, eval = FALSE}
+```{r create-age-cat, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-Whickham %
+Whickham <- Whickham %>%
   mutate(age_cat = case_when(
-    age <= ___ ~ "18-44",
-    age > ___ & age <= ___ ~ "45-64",
-    age > ___ ~ "65+"
+    age <= 44 ~ "18-44",
+    age > 44 & age <= 64 ~ "45-64",
+    age > 64 ~ "65+"
   ))
 ```
 
@@ -298,7 +298,7 @@ Whickham %
 - Saves the result back to `Whickham` using `<-`
 
 **Verify it worked:**
-```{r verify-age-cat, eval = FALSE}
+```{r verify-age-cat, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 Whickham %>%
   count(age_cat)
@@ -306,10 +306,9 @@ Whickham %>%
 
 **How many people are in each age category?**
 
-- 18-44: _____
-- 45-64: _____
-- 65+: _____
-
+- 18-44: 624
+- 45-64: 447
+- 65+: 243
 ---
 
 ## The Big Reveal: Simpson's Paradox
@@ -319,16 +318,17 @@ Whickham %>%
 Re-create the visualization depicting the relationship between smoking status and health outcome, faceted by `age_cat`. What changed? What might explain this change? 
 
 **Part A: Create the faceted visualization**
-```{r faceted-viz, eval = FALSE}
+```{r faceted-viz, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-ggplot(data = Whickham, aes(x = ___, fill = ___)) +
-  geom_bar(position = "___") +
-  facet_wrap(~___) +
+ggplot(Whickham, aes(x = smoker, fill = outcome)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~age_cat) +
+  scale_fill_manual(values = c("Alive" = "plum", "Dead" = "darkcyan")) +
   labs(
-    title = "___",
-    x = "___",
-    y = "___",
-    fill = "___"
+    title = "Health Outcomes by Smoking Status and Age",
+    x = "Smoker at Baseline",
+    y = "Proportion of Participants",
+    fill = "Outcome"
   )
 ```
 
@@ -337,7 +337,7 @@ ggplot(data = Whickham, aes(x = ___, fill = ___)) +
 **Part B: Examine the three-way contingency table**
 
 Extend the contingency table from earlier by breaking it down by age category:
-```{r three-way-table, eval = FALSE}
+```{r three-way-table, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 Whickham %>%
   count(smoker, age_cat, outcome)
@@ -348,21 +348,22 @@ Whickham %>%
 # Remember to change eval=FALSE to eval=TRUE!
 Whickham %>%
   count(smoker, age_cat, outcome) %>%
-  group_by(___, ___) %>%
-  mutate(proportion = n / sum(n))
+  group_by(smoker, age_cat) %>%
+  mutate(proportion = n / sum(n)) %>%
+  ungroup()
 ```
 
 **Part C: Interpret the results**
 
 **What changed when you added age_cat?**
-
+After separating the data by age group, smokers had a lower survival proportion than non-smokers in every age category. This is the opposite of the pattern in the combined data.
 
 
 **Compare the relationship between smoking and outcome:**
 
-**Overall (from Exercise 5):** Smokers appeared to have _____________________ survival
+**Overall (from Exercise 5):** Smokers appeared to have higher survival
 
-**Within each age group (from Exercise 7):** Smokers appear to have 
+**Within each age group (from Exercise 7):** 
 
 **What might explain this change?**
 
@@ -373,7 +374,7 @@ Consider:
 - How might age affect both smoking status and survival?
 
 **Your explanation:**
-
+Most smokers were in the younger age groups, which had higher survival rates overall. Non-smokers included a larger proportion of older participants, who had lower survival rates. This made smokers appear to have better survival when all ages were combined, even though smokers had lower survival within each age group. Age is a confounding variable, and this reversal is an example of Simpson’s paradox.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 6-7", and push your changes.**
