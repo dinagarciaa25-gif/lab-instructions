@@ -1,6 +1,6 @@
 ---
 title: "Lab 07 - Smokers in Whickham"
-author: "[Your Name]"
+author: "Dina Alarcon"
 subtitle: "Simpson's paradox"
 output: 
   tufte::tufte_handout:
