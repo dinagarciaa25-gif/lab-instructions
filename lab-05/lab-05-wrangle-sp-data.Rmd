@@ -333,27 +333,28 @@ dn_lq_ak_mindist <- dn_lq_ak %>%
 Describe the distribution of the distances between Denny's and the nearest La Quinta locations in Alaska. Also include an appropriate visualization and relevant summary statistics.
 
 **Create a visualization:**
-```{r visualize-ak-distances, eval = FALSE}
+```{r visualize-ak-distances, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-ggplot(data = dn_lq_ak_mindist, aes(x = ___)) +
-  geom_histogram(binwidth = ___) +
+ggplot(data = dn_lq_ak_mindist, aes(x = closest)) +
+  geom_histogram(binwidth = 1, fill = "purple", color = "white") +
   labs(
-    title = "___",
-    x = "___",
-    y = "___"
+    title = "Distance to the Nearest La Quinta in Alaska",
+    x = "Distance (km)",
+    y = "Number of Denny's Locations"
   )
 ```
 
 **Calculate summary statistics:**
-```{r summary-ak-distances, eval = FALSE}
+```{r summary-ak-distances, eval = TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 dn_lq_ak_mindist %>%
   summarise(
-    min = min(___),
-    max = max(___),
-    mean = mean(___),
-    median = median(___),
-    sd = sd(___)
+    min = min(closest),
+    max = max(closest),
+    mean = mean(closest),
+    median = median(closest),
+    sd = sd(closest),
+    IQR = IQR(closest)
   )
 ```
 
@@ -362,7 +363,7 @@ dn_lq_ak_mindist %>%
 Consider shape, center, spread, and any unusual observations.
 
 **Your answer:**
-
+The distances range from about 2.04 to 6.00 km. Two Denny's locations are about 5–6 km from their nearest La Quinta, while one is closer at about 2 km. This suggests a left-skewed distribution, although there are only three observations. The mean is 4.41 km and the median is 5.20 km. The standard deviation is about 2.10 km and the IQR is about 1.98 km. There are no clear outlines.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 8", and push your changes.**
